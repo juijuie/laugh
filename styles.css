@@ -1,0 +1,239 @@
+/* styles.css */
+
+/* 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+p {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.gothic-a1-regular {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-kr-800 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* 전체 페이지 설정 */
+body {
+    background-color: rgb(106, 106, 106); /* #ffff94;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* 제목 컨테이너 */
+.title-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+    position: relative;
+    height: 30px; /* 적절한 높이 설정 */
+}
+
+/* 스크롤링 텍스트 */
+.scrolling-text {
+    display: inline-block;
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 0 black;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll-text 10s linear infinite;
+}
+
+.scrolling-text::after {
+    content: " 웃으면 .. 福이 올까요? 웃으면 .. 福이 올까요? 웃으면 .. 福이 올까요? ";
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* 버튼 컨테이너 */
+.buttons-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px; /* 버튼 간의 간격 조절 */
+    z-index: 3; /* 상위 요소로 설정 */
+    position: relative;
+}
+
+.category-button {
+    background-color: green;
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 10pt;
+    width: 100px;
+    height: 30px; /* height 조정 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.category-button:nth-child(2n) {
+    background-color: rgb(0, 0, 0) /* #ff9bda;*/
+}
+
+.category-button:nth-child(2n+1) {
+    background-color: rgb(0, 0, 0) /*#3affad;*/
+}
+
+/* 설명 컨테이너 */
+.description-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.category-description {
+    font-size: 10pt;
+}
+
+/* 이미지 그리드 설정 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(14, 105px);
+    grid-template-rows: repeat(15, 60px);
+    gap: 5px;
+    width: 90%;
+    margin-top: 20px;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+}
+
+.image-grid a {
+    display: block;
+    width: 105px;
+    height: 60px;
+    overflow: hidden;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-sizing: border-box; /* 테두리와 패딩을 요소 크기에 포함 */
+}
+
+.img-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none; /* 오버레이가 클릭 이벤트를 차단하지 않도록 설정 */
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+}
+
+/* 팝업 이미지 컨테이너 */
+.popup-image-container {
+    display: none;
+    position: absolute; /* absolute로 변경 */
+    pointer-events: none;
+    z-index: 1000; /* pop-up 이미지가 다른 요소들 위에 나타나도록 설정 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    cursor: help; /* 팝업 이미지 위에 마우스를 올리면 커서 모양 변경 */
+}
+
+.popup-image-container img {
+    width: auto;
+    height: auto;
+    max-width: 90vw; /* 화면 너비의 90%로 최대 크기 제한 */
+    max-height: 90vh; /* 화면 높이의 90%로 최대 크기 제한 */
+    border: 2px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-image-container audio {
+    display: none;
+}
+
+.popup-image-container .popup-text {
+    position: absolute;
+    top: 49.5%;
+    left: 50%;
+    width: 100%;
+    height: 99%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+    display: flex;
+    align-content: center;  /* 세로 가운데 정렬 */
+    justify-content: center;  /* 가로 가운데 정렬 */
+    overflow: hidden;  /* 텍스트가 넘칠 경우 숨김 */
+    padding: 20px;  /* 텍스트와 테두리 간 여백 */
+    box-sizing: border-box;  /* 패딩과 테두리를 포함한 크기 계산 */
+    white-space: normal;  /* 텍스트 자동 줄바꿈 */
+    cursor: help; /* 텍스트가 있는 팝업 위에 마우스를 올리면 커서 모양 변경 */
+}
+
+/* Bouncing images 설정 */
+.bouncing-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 이미지 그리드 뒤에 배치 */
+}
+
+.bouncing-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    pointer-events: auto; /* 클릭 가능하게 설정 */
+}
+
+

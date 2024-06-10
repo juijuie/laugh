@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웃으면.. 복이 올까요?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="description.css">
+    <style>
+        /* 개별 위치 조정 */
+        :root {
+            --image-padding-right: 50px /* 이미지와 타이틀 사이 간격 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="buttons-container">
+        <div class="category-button" onclick="window.location.href='index.html'">전체보기</div>
+        <div class="category-button" onclick="window.location.href='Category-1.html'">웃음소리</div>
+        <div class="category-button" onclick="window.location.href='page3.html'">웃음종류</div>
+        <div class="category-button" onclick="window.location.href='page4.html'">관련해서</div>
+        <div class="category-button" onclick="window.location.href='무책임한 웃음.html'">무책임한 웃음</div>
+        <div class="category-button" onclick="window.location.href='다른웃음.html'">다른 웃음</div>
+    </div>
+
+    <div class="main-container">
+        <!-- 좌측 컨테이너: 이미지와 설명 테이블 -->
+        <div class="left-container">
+            <img src="상세/올드보이_상세1.png" alt="Image Description" class="image">
+            <img src="상세/올드보이_상세2.png" alt="Image Description" class="image"  style="width: 300px;">
+            <img src="상세/올드보이_상세3.png" alt="Image Description" class="image">
+            <img src="상세/올드보이_상세4.png" alt="Image Description" class="image">
+        </div>
+        
+        <!-- 우측 컨테이너: 이미지 제목과 설명 -->
+        <div class="right-container">
+            <div class="image-title">
+                NO.24&nbsp;&nbsp;영화 <올드보이> 속 오대수의 웃음
+            </div>
+            <div class="image-description">
+                영화 <올드보이> 속 마지막 장면인 오대수의 웃음. 두 사람이 껴안고, 미도가 “사랑해요, 아저씨.”라고 말하자 그 말을 들은 오대수는 우는 것 같기도 하고 웃는 것 같기도 한 표정을 짓는다. 대수의 묘한 표정이 가득한 채로 올드보이의 대표 OST "<a href="#" id="toggleVideo">The Last Waltz</a>"가 흘러나오며 영화가 마무리 된다. 그의 마지막 웃음에 대해서는 여러가지 해석이 존재한다. 과연 대수의 기억은 지워졌을까? 그의 표정은 웃음일까 울음일까.
+                <div id="videoContainer" style="display: none;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_DxjFs_dsR8?si=QATVrGq-tC4vmJ_j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="image-description">
+                한편 대수의 방에는 <a href="#" id="toggleImage">그림 하나</a>가 걸려있다.
+                <div id="imageContainer" style="display: none; text-align: center;">
+                    <img src="상세\그림 하나.png" alt="Detailed Image">
+                    <div style="font-size: 10pt; text-align: center;">제임스 엔소르, 슬퍼하는 남자 (1892)</div>
+                </div>
+            </div>
+
+            <div class="image-description">
+                입은 웃고 있지만 눈은 울고 있는 그림 속 남성이 마치 불가항력 앞에서 아무것도 할 수 없는 그의 심정을 대변하는 듯하다. 영화속에선 그림 아래에 시인 <a href="https://en.wikipedia.org/wiki/Ella_Wheeler_Wilcox" target="_blank">엘라 휠러 윌콕스(Ella Wheeler Wilcox)</a>의 <a href="#" id="toggleText"><고독, Solitude></a>의 시구가 쓰여있다.
+                <div id="textContainer" style="display: none; text-align: center; font-size: 10pt;">
+                    <p>"웃어라, 온 세상이 너와 함께 웃을 것이다.<br>울어라, 너 혼자 울게 될 것이다."</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleVideo').addEventListener('click', function(event) {
+            event.preventDefault();
+            const videoContainer = document.getElementById('videoContainer');
+            if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+            } else {
+                videoContainer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('toggleImage').addEventListener('click', function(event) {
+            event.preventDefault();
+            const imageContainer = document.getElementById('imageContainer');
+            if (imageContainer.style.display === 'none') {
+                imageContainer.style.display = 'block';
+            } else {
+                imageContainer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('toggleText').addEventListener('click', function(event) {
+            event.preventDefault();
+            const textContainer = document.getElementById('textContainer');
+            if (textContainer.style.display === 'none') {
+                textContainer.style.display = 'block';
+            } else {
+                textContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

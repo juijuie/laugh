@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웃으면.. 복이 올까요?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="description.css">
+    <style>
+        /* 개별 위치 조정 */
+        :root {
+            --image-padding-right: 50px /* 이미지와 타이틀 사이 간격 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="buttons-container">
+        <div class="category-button" onclick="window.location.href='index.html'">전체보기</div>
+        <div class="category-button" onclick="window.location.href='Category-1.html'">웃음소리</div>
+        <div class="category-button" onclick="window.location.href='page3.html'">웃음종류</div>
+        <div class="category-button" onclick="window.location.href='page4.html'">관련해서</div>
+        <div class="category-button" onclick="window.location.href='무책임한 웃음.html'">무책임한 웃음</div>
+        <div class="category-button" onclick="window.location.href='다른웃음.html'">다른 웃음</div>
+    </div>
+
+    <div class="main-container">
+        <!-- 좌측 컨테이너: 이미지와 설명 테이블 -->
+        <div class="left-container">
+            <img src="상세\박뿜계_상세1.gif" alt="Image Description" class="image" style="width: 400px;">
+        </div>
+        
+        <!-- 우측 컨테이너: 이미지 제목과 설명 -->
+        <div class="right-container">
+            <div class="image-title">
+                NO.10&nbsp;&nbsp;박범계
+            </div>
+
+            <div class="image-description">
+                2016년 12월 15일 열린 국회 청문회에서 <a href="https://ko.wikipedia.org/wiki/%EB%B0%95%EB%B2%94%EA%B3%84" target="_blank">박범계</a> 법무부 장관이 갑자기 웃음을 터뜨려 눈길을 끌었다. 사건으로 인해 박뿜계, 박두꺼비 라는 별명을 얻었다. 박범계 본인도 꽤 마음에 들어한다. 박범계 의원은 이후 장제원 의원에게 웃음을 터뜨린 것에 대해 <a href="https://n.news.naver.com/mnews/article/052/0000945491?sid=100" target="_blank">사과</a>했다.
+            </div>
+
+            <div class="image-description">
+                한편 박범계 의원은 19년도 청와대 특별감찰반 민간인 사찰 의혹 규명을 위해 열린 국회 운영위원회 현장에서 언성이 높아지자 “들어!”라고 소리친 뒤 뒤늦게 “<a href="#" id="toggleVideo">요!</a>”를 붙여 다시한번 화제가 된 바 있다.
+                <div id="videoContainer" style="display: none;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_U124YhpYpk?si=oFCE1T7x-adzV6QF&amp;start=128" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleVideo').addEventListener('click', function(event) {
+            event.preventDefault();
+            const videoContainer = document.getElementById('videoContainer');
+            if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+            } else {
+                videoContainer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('toggleImage').addEventListener('click', function(event) {
+            event.preventDefault();
+            const imageContainer = document.getElementById('imageContainer');
+            if (imageContainer.style.display === 'none') {
+                imageContainer.style.display = 'block';
+            } else {
+                imageContainer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('toggleText').addEventListener('click', function(event) {
+            event.preventDefault();
+            const textContainer = document.getElementById('textContainer');
+            if (textContainer.style.display === 'none') {
+                textContainer.style.display = 'block';
+            } else {
+                textContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

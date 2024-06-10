@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웃으면.. 복이 올까요?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="buttons-container">
+        <div class="category-button" onclick="window.location.href='index.html'">전체보기</div>
+        <div class="category-button" onclick="window.location.href='웃음소리.html'">웃음소리</div>
+        <div class="category-button" onclick="window.location.href='웃음종류.html'">웃음종류</div>
+        <div class="category-button" onclick="window.location.href='부정적 웃음.html'">부정적 웃음</div>
+        <div class="category-button" onclick="window.location.href='웃음참기.html'">웃음참기</div>
+        <div class="category-button" onclick="window.location.href='그밖의 웃음.html'">그밖의 웃음</div>
+    </div>
+
+    <div class="description-container">
+        <p class="category-description">입웃음 흐뭇흐뭇<br>입웃음 흐뭇흐뭇 :)</p>
+    </div>
+
+    <div class="bouncing-images">
+        <img src="image/eye.png" class="bouncing-image" id="bouncingImage1" onclick="window.location.href='눈웃음.html'">
+        <img src="image/mouse.png" class="bouncing-image" id="bouncingImage2" onclick="window.location.href='입웃음.html'">
+    </div>
+
+    <div class="image-grid">
+        <!-- 이미지들을 위한 컨테이너 -->
+        <!-- 각 이미지 요소는 여기 추가될 것입니다. -->
+        <!-- 각 이미지는 a 태그로 둘러싸여 있어 클릭 시 링크로 이동할 수 있습니다. -->
+        <!-- img 태그는 이미지 자체를 표시합니다. -->
+    </div>
+    
+    <div class="popup-image-container" id="popupImageContainer">
+        <img src="" alt="Popup Image" id="popupImage">
+        <audio id="popupAudio"></audio>
+        <div class="popup-text" id="popupText"></div>
+    </div>
+
+    <script src="category-js/입웃음.js"></script>
+    <script src="bouncing.js"></script>
+</body>
+</html>
